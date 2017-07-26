@@ -1,11 +1,8 @@
 package com.nish.electoniccard.thread;
 
 import static org.junit.Assert.assertEquals;
-
 import java.math.BigDecimal;
-
 import org.junit.Test;
-
 import com.nish.electoniccard.card.Card;
 import com.nish.electoniccard.exception.TransactionException;
 /**

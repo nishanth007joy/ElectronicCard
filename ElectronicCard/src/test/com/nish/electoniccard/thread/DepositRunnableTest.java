@@ -1,11 +1,8 @@
 package com.nish.electoniccard.thread;
 
 import static org.junit.Assert.*;
-
 import java.math.BigDecimal;
-
 import org.junit.Test;
-
 import com.nish.electoniccard.card.Card;
 /**
  * Test for deposit thread
