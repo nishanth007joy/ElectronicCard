@@ -16,9 +16,11 @@ public class ApplicationClient {
 		Thread thread3 = new Thread(depositThread1, "Deposit 3");
 		thread1.start();
 		WithdrawRunnable withdrawThread1 = new WithdrawRunnable(card, new BigDecimal("10.00"));
+		WithdrawRunnable withdrawThread2 = new WithdrawRunnable(card, new BigDecimal("50.00"));
+		WithdrawRunnable withdrawThread3 = new WithdrawRunnable(card, new BigDecimal("100.00"));
 		Thread withdrawThread11 = new Thread(withdrawThread1, "Withdraw 1");
-		Thread withdrawThread12 = new Thread(withdrawThread1, "Withdraw 2");
-		Thread withdrawThread13 = new Thread(withdrawThread1, "Withdraw 3");
+		Thread withdrawThread12 = new Thread(withdrawThread2, "Withdraw 2");
+		Thread withdrawThread13 = new Thread(withdrawThread3, "Withdraw 3");
 		withdrawThread11.start();
 		withdrawThread12.start();
 		withdrawThread13.start();

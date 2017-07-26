@@ -18,7 +18,9 @@ public class DepositRunnable implements Runnable{
 	}
 	@Override
 	public void run() {
+		
 		TransactionManagerImpl.getInstance().creditCard(card, amount);
+		
 	}
 
 }
