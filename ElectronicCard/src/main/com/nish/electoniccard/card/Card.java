@@ -14,7 +14,6 @@ public class Card {
 	}
 	private String cardHolerName;
 	private BigDecimal balance;
-	private Map<String,TransactionDetails> transactions;
 	
 	public BigDecimal getBalance() {
 		return balance;
@@ -23,22 +22,17 @@ public class Card {
 		return cardHolerName;
 	}
 
-	public void setCardHolerName(String cardHolerName) {
+	public synchronized void setCardHolerName(String cardHolerName) {
 		this.cardHolerName = cardHolerName;
 	}
 
 	public synchronized void setBalance(BigDecimal balance) {
 		this.balance = balance;
 	}
-	public Map<String, TransactionDetails> getTransactions() {
-		return transactions;
-	}
-	public void setTransactions(Map<String, TransactionDetails> transactions) {
-		this.transactions = transactions;
-	}
+	
 	@Override
 	public String toString() {
-		return "Card [cardHolerName=" + cardHolerName + ", balance=" + balance + ", transactions=" + transactions + "]";
+		return "Card [cardHolerName=" + cardHolerName + ", balance=" + balance + "]";
 	}
 	
 }

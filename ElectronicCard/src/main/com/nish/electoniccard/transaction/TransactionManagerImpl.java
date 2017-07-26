@@ -17,7 +17,10 @@ public class TransactionManagerImpl implements TransactionManager{
 		return transactionManager;
 	}
 	@Override
-	public synchronized void debitCard(Card card, BigDecimal amount, String transactionDesc) {
+	public synchronized void debitCard(Card card, BigDecimal amount) {
+		if(null == card || null == amount){
+			throw new TransactionException("Wrong input");
+		}
 		BigDecimal currentBalance = card.getBalance();
 		currentBalance = currentBalance.subtract(amount);
 		if(currentBalance.signum() == -1){
@@ -28,13 +31,13 @@ public class TransactionManagerImpl implements TransactionManager{
 	}
 
 	@Override
-	public synchronized void creditCard(Card card, BigDecimal amount, String transactionDesc) {
+	public synchronized void creditCard(Card card, BigDecimal amount) {
+		if(null == card || null == amount){
+			throw new TransactionException("Wrong input");
+		}
 		BigDecimal currentBalance = card.getBalance();
 		currentBalance= currentBalance.add(amount);
 		card.setBalance(currentBalance);
 		System.out.println("After deposit " + card);
-	}
-	private void addTransactionHistory(){
-
 	}
 }
