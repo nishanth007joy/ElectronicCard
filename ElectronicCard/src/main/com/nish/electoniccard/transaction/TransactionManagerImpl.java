@@ -4,7 +4,11 @@ import java.math.BigDecimal;
 
 import com.nish.electoniccard.exception.TransactionException;
 import com.nish.electoniccard.card.Card;
-
+/**
+ * This class deals with core logic of transaction
+ * @author Nishanth Mathew Joy
+ *
+ */
 public class TransactionManagerImpl implements TransactionManager{
 	private TransactionManagerImpl() {
 	}
@@ -17,9 +21,9 @@ public class TransactionManagerImpl implements TransactionManager{
 		return transactionManager;
 	}
 	@Override
-	public synchronized void debitCard(Card card, BigDecimal amount) {
+	public synchronized void debitCard(final Card card,final BigDecimal amount) {
 		if(null == card || null == amount){
-			throw new TransactionException("Wrong input");
+			throw new TransactionException(TransactionException.ERROR_CODE_1);
 		}
 		BigDecimal currentBalance = card.getBalance();
 		currentBalance = currentBalance.subtract(amount);
@@ -31,9 +35,9 @@ public class TransactionManagerImpl implements TransactionManager{
 	}
 
 	@Override
-	public synchronized void creditCard(Card card, BigDecimal amount) {
+	public synchronized void creditCard(final Card card,final BigDecimal amount) {
 		if(null == card || null == amount){
-			throw new TransactionException("Wrong input");
+			throw new TransactionException(TransactionException.ERROR_CODE_1);
 		}
 		BigDecimal currentBalance = card.getBalance();
 		currentBalance= currentBalance.add(amount);

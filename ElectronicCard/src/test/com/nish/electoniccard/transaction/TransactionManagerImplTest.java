@@ -9,7 +9,11 @@ import org.junit.Test;
 
 import com.nish.electoniccard.card.Card;
 import com.nish.electoniccard.exception.TransactionException;
-
+/**
+ * Test for Transaction manager impl
+ * @author Nishanth Mathew Joy
+ *
+ */
 public class TransactionManagerImplTest {
 
 	@Test

@@ -14,11 +14,11 @@ public interface TransactionManager {
 	 * @param card
 	 * @param amount
 	 */
-	public  void debitCard(Card card, BigDecimal amount);
+	public  void debitCard(final Card card,final BigDecimal amount);
 	/**
 	 * 
 	 * @param card
 	 * @param amount
 	 */
-	public void creditCard(Card card, BigDecimal amount);
+	public void creditCard(final Card card,final BigDecimal amount);
 }

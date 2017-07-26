@@ -4,7 +4,11 @@ import java.math.BigDecimal;
 
 import com.nish.electoniccard.card.Card;
 import com.nish.electoniccard.transaction.TransactionManagerImpl;
-
+/**
+ * Runnable class for deposit
+ * @author Nishanth Mathew Joy
+ *
+ */
 public class DepositRunnable implements Runnable{
 	private Card card;
 	private BigDecimal amount;

@@ -7,7 +7,11 @@ import java.math.BigDecimal;
 import org.junit.Test;
 
 import com.nish.electoniccard.card.Card;
-
+/**
+ * Test for deposit thread
+ * @author Nishanth Mathew Joy
+ *
+ */
 public class DepositRunnableTest {
 
 	@Test

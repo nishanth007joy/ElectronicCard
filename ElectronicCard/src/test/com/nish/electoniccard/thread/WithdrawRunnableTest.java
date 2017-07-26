@@ -8,7 +8,11 @@ import org.junit.Test;
 
 import com.nish.electoniccard.card.Card;
 import com.nish.electoniccard.exception.TransactionException;
-
+/**
+ * Test class for Withdraw thread
+ * @author Nishanth Mathew Joy
+ *
+ */
 public class WithdrawRunnableTest {
 
 	@Test

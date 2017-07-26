@@ -4,7 +4,11 @@ import java.math.BigDecimal;
 
 import com.nish.electoniccard.card.Card;
 import com.nish.electoniccard.transaction.TransactionManagerImpl;
-
+/**
+ * Runnable class for withdraw
+ * @author Nishanth Mathew Joy
+ *
+ */
 public class WithdrawRunnable implements Runnable{
 	private Card card;
 	private BigDecimal amount;
