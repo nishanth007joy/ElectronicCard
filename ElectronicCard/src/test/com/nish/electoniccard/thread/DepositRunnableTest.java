@@ -17,11 +17,11 @@ public class DepositRunnableTest {
 	@Test
 	public void testRun() {
 		Card card = new Card(); 
-		card.setBalance(BigDecimal.valueOf(1000));
+		card.setBalance(new BigDecimal("1000.00"));
 		card.setCardHolerName("Test1");
-		DepositRunnable runnable = new DepositRunnable(card,  BigDecimal.valueOf(100));
+		DepositRunnable runnable = new DepositRunnable(card, new BigDecimal("100.00"));
 		runnable.run();
-		assertEquals(BigDecimal.valueOf(1100), card.getBalance());
+		assertEquals(new BigDecimal("1100.00"), card.getBalance());
 	}
 	
 

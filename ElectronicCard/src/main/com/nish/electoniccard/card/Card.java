@@ -10,7 +10,7 @@ import java.util.Map;
  */
 public class Card {
 	{
-		balance = new BigDecimal(0.00);
+		balance = new BigDecimal("0.00");
 	}
 	private String cardHolerName;
 	private BigDecimal balance;

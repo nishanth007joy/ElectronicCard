@@ -19,21 +19,21 @@ public class TransactionManagerImplTest {
 	@Test
 	public void testDebit() {
 		Card card = new Card(); 
-		card.setBalance(BigDecimal.valueOf(1000));
+		card.setBalance(new BigDecimal("1000.00"));
 		card.setCardHolerName("Test1");
-		TransactionManagerImpl.getInstance().debitCard(card, BigDecimal.valueOf(100));
-		assertEquals(BigDecimal.valueOf(900), card.getBalance());
+		TransactionManagerImpl.getInstance().debitCard(card, new BigDecimal("100.00"));
+		assertEquals(new BigDecimal("900.00"), card.getBalance());
 	}
 	@Test(expected = TransactionException.class)
 	public void testDebitException() {
 		Card card = new Card(); 
 		card.setCardHolerName("Test1");
-		TransactionManagerImpl.getInstance().debitCard(card, BigDecimal.valueOf(100));
+		TransactionManagerImpl.getInstance().debitCard(card, new BigDecimal("100.00"));
 	}
 	
 	@Test(expected = TransactionException.class)
 	public void testDebitInvalidReqNullCard() {
-		TransactionManagerImpl.getInstance().debitCard(null, BigDecimal.valueOf(100));
+		TransactionManagerImpl.getInstance().debitCard(null, new BigDecimal("100.00"));
 	}
 	
 	@Test(expected = TransactionException.class)
@@ -51,12 +51,12 @@ public class TransactionManagerImplTest {
 		Card card = new Card(); 
 		card.setBalance(BigDecimal.valueOf(1000));
 		card.setCardHolerName("Test1");
-		TransactionManagerImpl.getInstance().creditCard(card, BigDecimal.valueOf(100));
-		assertEquals(BigDecimal.valueOf(1100), card.getBalance());
+		TransactionManagerImpl.getInstance().creditCard(card, new BigDecimal("100.00"));
+		assertEquals(new BigDecimal("1100.00"), card.getBalance());
 	}
 	@Test(expected = TransactionException.class)
 	public void testCreitInvalidReqNullCard() {
-		TransactionManagerImpl.getInstance().creditCard(null, BigDecimal.valueOf(100));
+		TransactionManagerImpl.getInstance().creditCard(null, new BigDecimal("100.00"));
 	}
 	
 	@Test(expected = TransactionException.class)
